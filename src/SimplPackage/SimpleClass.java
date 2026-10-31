@@ -1,4 +1,4 @@
-import java.util.Objects;
+package SimplPackage;
 
 public class SimpleClass {
     // =============== State ================
@@ -36,7 +36,7 @@ public class SimpleClass {
 
     @Override
     public String toString() {
-        return "SimpleClass{" +
+        return "SimplPackage.SimpleClass{" +
                 "name='" + name + '\'' +
                 ", decimal=" + decimal +
                 ", role=" + role +

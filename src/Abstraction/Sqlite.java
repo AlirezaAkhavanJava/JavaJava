@@ -1,4 +1,13 @@
 package Abstraction;
 
-public class Sqlite {
+public class Sqlite extends AbstractConnection{
+    @Override
+    public String createTable() {
+        return "";
+    }
+
+    @Override
+    public void persist() {
+
+    }
 }
