@@ -1,4 +1,4 @@
-package Threads;
+package Threads.Basic;
 
 public class Depo {
     private int count = 0;

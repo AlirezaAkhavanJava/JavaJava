@@ -1,6 +1,4 @@
-package Threads;
-
-import java.time.LocalTime;
+package Threads.Basic;
 
 public class BasicThreads {
 
