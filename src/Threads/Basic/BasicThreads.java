@@ -1,5 +1,7 @@
 package Threads.Basic;
 
+import java.time.Duration;
+
 public class BasicThreads {
 
 
@@ -59,9 +61,17 @@ public class BasicThreads {
         AtomicDepo atomicDepo = new AtomicDepo();
         Runnable runnable = () -> {
             int i = 0;
-            while (i < 100000) {
+            while (i < 500) {
                 atomicDepo.increment();
                 System.out.println("count : " + atomicDepo.getCount() + " - " + Thread.currentThread().getName());
+                if (i == 126){
+                    try {
+                        Thread.sleep(Duration.ofSeconds(3));
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                    System.out.println("I WILL SLEEP FOR 3 SECONDS");
+                }
                 i++;
             }
 
@@ -73,8 +83,8 @@ public class BasicThreads {
         t1.start();
         t2.start();
 
-        t1.join();
-        t2.join();
+        t1.join(Duration.ofSeconds(3));
+        t1.join(Duration.ofSeconds(3));
 
         System.out.println("COUNT : " + atomicDepo.getCount());
         System.out.println("DONE");
